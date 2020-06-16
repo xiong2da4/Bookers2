@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
-  resources :users
+  resources :users, only: [:index, :show, :edit, :update]
 
   get "about" => "homes#about", as: "about"
   get "books" => "books#index", as: "books"

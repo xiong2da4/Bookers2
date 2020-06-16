@@ -2,6 +2,7 @@
 <div class ="side">
 <span>name</span><%= @user.name %>
 <span>intro</span><%= @user.introduction %>
+<%= link_to "edit", edit_user_path(current_user) %>
 <%= render "new" %>
 </div>
 
