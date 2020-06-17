@@ -3,3 +3,4 @@
 <span><%= @book.body %></span>
 
 <%= link_to "edit", edit_book_path(@book) %>
+<%= link_to "destroy", book_path(@book), method: :delete %>

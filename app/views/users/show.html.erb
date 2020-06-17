@@ -16,11 +16,12 @@
 </div>
 
 <div class="main">
+<h1>Books</h1>
 <% @user.books.each do |book| %>
-  <%= book.title %>
+  <%= attachment_image_tag @user, :profile_image, size: "100x100" %>
+  <%= link_to book.title, book_path(book) %>
   <%= book.body %>
-  <%= link_to "edit", edit_book_path(book) %>
-  <%= link_to "destroy", book_path(book), method: :delete %>
+  <br>
 <% end %>
 
 </div>
