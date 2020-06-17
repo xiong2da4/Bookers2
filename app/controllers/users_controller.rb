@@ -20,11 +20,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user.update(user_params)
+      if current_user.update(user_params)
+      flash[:notice] = "successfully"
       redirect_to user_path(current_user)
-    else
-      redirect_to edit_user_path(current_user)
-    end
+      else
+        render action: :edit
+      end
   end
 
   private
