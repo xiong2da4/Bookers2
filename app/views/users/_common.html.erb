@@ -12,15 +12,15 @@
 <span>intro</span><%= @user.introduction %>
 <br>
 <%= link_to "edit", edit_user_path(current_user) %>
-<%= render "new" %>
 </div>
 
-<div class="main">
-<% @user.books.each do |book| %>
-  <%= book.title %>
-  <%= book.body %>
-  <%= link_to "edit", edit_book_path(book) %>
-  <%= link_to "destroy", book_path(book), method: :delete %>
+<h1>新規投稿</h1>
+<%= form_for(@book) do |f| %>
+  <h4>title</h4>
+  <%= f.text_field :title %>
+  <h4>opinion</h4>
+  <%= f.text_field :body %>
+  <br>
+  <%= f.submit "Create Book" %>
 <% end %>
 
-</div>
