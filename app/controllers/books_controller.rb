@@ -1,7 +1,9 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.all
-    @user = User.new
+    @books = Book.all.order("id DESC")
+    @book = Book.new
+    @user = User.find_by(id: current_user.id)
+    # @users = User.where(id: @book.user_id)
   end
 
   def show

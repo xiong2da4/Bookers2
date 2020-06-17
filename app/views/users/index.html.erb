@@ -2,6 +2,8 @@
 
 <h1>Users</h1>
 <% @users.each do |user| %>
+<%= attachment_image_tag user, :profile_image, size: "100x100", fallback: "default.png" %>
   <span>name</span> <%= user.name %>
+  <%= link_to "show", user_path(user) %>
   <br>
 <% end %>

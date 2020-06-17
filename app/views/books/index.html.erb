@@ -1,7 +1,10 @@
+<%= render "common" %>
+
 <h1>Books</h1>
 <% @books.each do |book| %>
+  <%= attachment_image_tag book.user, :profile_image, size: "100x100", fallback: "default.png" %>
   <p>title</p>
-  <span><%= book.title %></span>
+  <span><%= link_to book.title, book_path(book) %></span>
   <p>opinion</p>
   <span><%= book.body %></span>
 <% end %>

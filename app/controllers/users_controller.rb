@@ -3,14 +3,14 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
   def index
-    @users =  User.all
+    @users =  User.all.order("id DESC")
     @user = User.find_by(id:current_user.id)
     @book = Book.new
   end
 
   def show
     @book = Book.new
-    @books = Book.all
+    # @books = Book.all.order("id DESC")
   end
 
   def edit
