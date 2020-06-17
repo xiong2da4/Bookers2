@@ -1,8 +1,15 @@
+<div class="sidemenu">
+<%= render '/books/common', user: @user, book: @booka %>
+</div>
+
+<div class="mainmenu">
 <h1>Books detail</h1>
+<%= attachment_image_tag @book.user, :profile_image, size: "100x100", fallback: "default.png" %>
+<span><%= @book.user.name %></span>
 <span><%= @book.title %></span>
 <span><%= @book.body %></span>
-
 <% if @book.user_id == current_user.id %>
 <%= link_to "edit", edit_book_path(@book) %>
 <%= link_to "destroy", book_path(@book), method: :delete %>
 <% end %>
+</div>

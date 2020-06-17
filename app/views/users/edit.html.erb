@@ -1,10 +1,11 @@
-<h1>User info</h1>
-<% if current_user.errors.any? %>
-  <%= current_user.errors.count %>error
-  <% current_user.errors.full_messages.each do |message| %>
-    <%= message %>
-  <% end %>
+<% if @user.errors.any? %>
+<%= @user.errors.count %>error
+<% @user.errors.full_messages.each do |message| %>
+  <%= message %>
 <% end %>
+<% end %>
+
+<h1>User info</h1>
 
 <%= form_for(@user) do |f| %>
   <p>name</p>

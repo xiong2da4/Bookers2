@@ -8,8 +8,8 @@ class User < ApplicationRecord
 
   attachment :profile_image
 
-  validates :introduction, length: {maximum: 75}
-  validates :name, length: {minimum: 2}
+  validates :introduction, length: {maximum: 50}
+  validates :name, length: {minimum: 2, maximum: 20}
   validates :name, {presence: true}
 
   def books

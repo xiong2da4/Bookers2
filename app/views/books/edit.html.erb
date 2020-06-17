@@ -1,3 +1,10 @@
+<% if @book.errors.any? %>
+<%= @book.errors.count %>error
+<% @book.errors.full_messages.each do |message| %>
+  <%= message %>
+<% end %>
+<% end %>
+
 <h1>Editing Book</h1>
 <%= form_for(@book) do |f| %>
   <h4>title</h4>

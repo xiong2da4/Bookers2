@@ -1,5 +1,5 @@
 <h1>User info</h1>
-<div class ="side">
+<div class ="sidemenu">
 
 <%= attachment_image_tag @user, :profile_image, size: "100x100", fallback: "default.png" %>
 <br>
@@ -11,7 +11,7 @@
 <%= render "new" %>
 </div>
 
-<div class="main">
+<div class="mainmenu">
 <h1>Books</h1>
 <% @user.books.each do |book| %>
   <%= attachment_image_tag @user, :profile_image, size: "100x100" %>
