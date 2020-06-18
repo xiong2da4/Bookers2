@@ -12,7 +12,9 @@
 <div class="mainmenu">
 <h1>Books</h1>
 <% @books.each do |book| %>
+  <%= link_to user_path(book.user.id) do %>
   <%= attachment_image_tag book.user, :profile_image, size: "100x100", fallback: "default.png" %>
+  <% end %>
   <span><%= link_to book.title, book_path(book) %></span>
   <span><%= book.body %></span>
   <br>
