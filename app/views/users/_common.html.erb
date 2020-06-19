@@ -1,22 +1,28 @@
-<h1>User info</h1>
-<div class ="side">
-
-<%= attachment_image_tag @user, :profile_image, size: "100x100", fallback: "default.png" %>
-<br>
-<span>name</span><%= @user.name %>
-<br>
-<span>intro</span><%= @user.introduction %>
-<br>
-<%= link_to "edit", edit_user_path(current_user) %>
+<h2>User info</h2>
+<%= attachment_image_tag @user, :profile_image, size: "50x50", fallback: "default.jpg" %>
+<table class="table">
+  <tbody>
+    <tr>
+      <th>name</th>
+      <th><%= @user.name %></th>
+    </tr>
+    <tr>
+      <th>intro</th>
+      <th><%= @user.introduction %></th>
+    </tr>
+  </tbody>
+</table>
+<div class="row">
+<%= link_to "", edit_user_path(current_user), class:"btn btn-default glyphicon glyphicon-wrench col-xs-12"%>
 </div>
 
-<h1>New book</h1>
+<h2>New book</h2>
 <%= form_for(@book) do |f| %>
   <h4>title</h4>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, class:"col-xs-12" %>
   <h4>opinion</h4>
-  <%= f.text_field :body %>
+  <%= f.text_field :body, class:"col-xs-12" %>
   <br>
-  <%= f.submit "Create Book" %>
+  <br>
+  <%= f.submit "Create Book", class:"btn btn-primary col-xs-12" %>
 <% end %>
-
